@@ -43,7 +43,9 @@ class Solution {
         	return 0;
         }
         int n = nums.length;
+        //length[i] means max length at ith number
         int[] length = new int[n];
+        //count[i] means number of max length at ith number
         int[] count = new int[n];
         
         int max = 0;
@@ -55,7 +57,7 @@ class Solution {
         			if(length[j] >= length[i]) {
         				length[i] = length[j] + 1;
         				count[i] = count[j];
-        			}else if(length[j] + 1 == length[i]) {
+        			}else if(length[j] + 1 == length[i]) {//multiple index have same length at ith number
         				count[i] += count[j];
         			}
 
